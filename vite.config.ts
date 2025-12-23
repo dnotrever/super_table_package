@@ -8,16 +8,18 @@ export default defineConfig({
         lib: {
             entry: path.resolve('src/index.ts'),
             formats: ['es'],
-            fileName: () => 'index.js'
+            fileName: () => 'index.js',
         },
         rollupOptions: {
             external: ['react', 'react-dom'],
             output: {
                 assetFileNames: (assetInfo) => {
-                    if (assetInfo.name === 'style.css') return 'style.css';
+                    if (assetInfo.name?.endsWith('.css')) {
+                        return 'style.css';
+                    }
                     return '[name][extname]';
-                }
-            }
-        }
-    }
+                },
+            },
+        },
+    },
 });
