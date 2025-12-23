@@ -22,7 +22,8 @@
     ],
     "scripts": {
         "build": "tsc -p tsconfig.build.json && cp src/index.d.ts dist/index.d.ts && vite build",
-        "prepare": "npm run build"
+        "prepare": "npm run build",
+        "dev": "vite"
     },
     "peerDependencies": {
         "react": "^18 || ^19",
