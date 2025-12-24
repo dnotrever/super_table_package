@@ -9,6 +9,9 @@ services:
         working_dir: /app
         environment:
             - HOME=/home/appuser
+        ports:
+            - "5175:5173"
+            - "5000:5000"
         volumes:
             - ./backend:/app/backend
             - ./:/app/

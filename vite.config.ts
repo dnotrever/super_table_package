@@ -10,11 +10,13 @@ export default defineConfig(({ command }) => {
             server: {
                 host: '0.0.0.0',
                 port: 5173,
+                fs: {
+                    allow: ['/app/src/dev'],
+                },
                 proxy: {
-                    '/api': {
+                    '/api/': {
                         target: 'http://localhost:5000',
                         changeOrigin: true,
-                        secure: false,
                     },
                 },
             }
